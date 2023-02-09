@@ -1,0 +1,13 @@
+python ./video_sci_proxgrad_multiGPU.py \
+--batch_size 3 \
+--lr 0.00001 \
+--lr_gamma 0.1 \
+--sched_step 10 \
+--print_every_n_steps 10 \
+--save_every_n_steps 100 \
+--savepath ./save/rsndncnn_exp1/ \
+--trainpath ../../data/DAVIS/matlab/ \
+--testpath ../../data/test_gray/ \
+--loadpath ./save/rsndncnn_exp0/model/best.ckpt \
+--denoiser RealSN_DnCNN \
+--gpu_ids 6

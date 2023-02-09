@@ -1,0 +1,14 @@
+python ./video_sci_proxgrad_multiGPU.py \
+--batch_size 1 \
+--lr 0.0001 \
+--lr_gamma 0.1 \
+--sched_step 10 \
+--print_every_n_steps 1 \
+--save_every_n_steps 1000 \
+--savepath ./save/test_dncnn/ \
+--trainpath ../../data/DAVIS/matlab/ \
+--testpath ../../data/test_gray/ \
+--loadpath None \
+--denoiser DnCNN \
+--gpu_ids 6 \
+--inference True

@@ -1,0 +1,13 @@
+python ./video_sci_proxgrad_multiGPU.py \
+--batch_size 4 \
+--lr 5e-5 \
+--lr_gamma 0.1 \
+--sched_step 10 \
+--print_every_n_steps 10 \
+--save_every_n_steps 500 \
+--savepath ./save/unet3d_noise_exp0/ \
+--trainpath ../../data/DAVIS/matlab/ \
+--testpath ../../data/test_gray/ \
+--loadpath None \
+--denoiser unet3d_noise \
+--gpu_ids 9

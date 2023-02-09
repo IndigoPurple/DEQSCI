@@ -1,0 +1,34 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "console": "integratedTerminal",
+
+            // "program": "video_sci_proxgrad_multiGPU.py",
+            "program": "video_sci_proxgrad_yaping.py",
+            "args": [
+                "--batch_size","2",
+                "--lr","0.001",
+                "--lr_gamma","0.9",
+                "--sched_step","10",
+                
+                "--trainpath","./datasets/mini_copy_davis/matlab/",
+                "--testpath","./datasets/test_gray/",
+                "--savepath","./save/test/",
+                "--loadpath","None",
+
+                "--gpu_ids", "0", "1",
+                // "--inference",
+                // "--denoiser", "unet3d",
+                // "--denoiser", "dncnn",
+            ],
+
+        }
+    ]
+}

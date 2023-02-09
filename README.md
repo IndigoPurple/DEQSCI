@@ -1,5 +1,3 @@
 # DEQSCI
 
-[04-Jan-2023] Sorry I am sick recently and thus will delay the code release.
-
-[22-Dec-2022] I will release the code by the end of this month.
+[09-Feb-2023] Code is a bit messy now. I plan to clean up by this weekend (12 Feb 2023).

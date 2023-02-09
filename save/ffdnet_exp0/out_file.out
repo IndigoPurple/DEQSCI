@@ -1,0 +1,11 @@
+cuda False
+GPU IDs: [3]
+cuda False
+GPU IDs: [3]
+cuda False
+GPU IDs: [3]
+cuda False
+GPU IDs: [3]
+cuda True
+GPU IDs: [0]
+Epoch: 0 Step: 0 Loss: 44.485992 PSNR: 5.94 dB best PSNR (test): 0.00 dB lr: 0.00010000
