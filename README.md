@@ -13,14 +13,16 @@ In this repository we provide code of the paper:
 - video presentation on [YouTube](https://www.youtube.com/watch?v=Pc2qaE_3unU&list=PLELW-PRf7MIftVUV0NLqR1s7iEdewbujN), Bilibili ([English](https://www.bilibili.com/video/BV1X54y1g7D9/), [Chinese](https://www.bilibili.com/video/BV1V54y137QK/), [Cantonese](https://www.bilibili.com/video/BV1224y1G7ee/))
 
 # Results
- Compressed Measurement |![Measurement](img/measurement_1.png "Compressed Measurement")|![Measurement](img/measurement_2.png "Compressed Measurement")|![Measurement](img/measurement_3.png "Compressed Measurement")|![Measurement](img/measurement_4.png "Compressed Measurement")|![Measurement](img/measurement_5.png "Compressed Measurement")|![Measurement](img/measurement_6.png "Compressed Measurement")
---- | ------ | ------ | ------ | ------ | ------ | ------ 
- Our Reconstruction Result |![Ours](img/Aerial.gif "Our Reconstruction Result")|![Ours](img/Drop.gif "Our Reconstruction Result")|![Ours](img/Kobe.gif "Our Reconstruction Result")|![Ours](img/Runner.gif "Our Reconstruction Result")|![Ours](img/Traffic.gif "Our Reconstruction Result")|![Ours](img/Vehicle.gif "Our Reconstruction Result")
+ Compressed Measurement |![Measurement](img/measurement_1.png "Compressed Measurement")|![Measurement](img/measurement_2.png "Compressed Measurement")|![Measurement](img/measurement_3.png "Compressed Measurement")
+--- | ------ | ------ | ------ 
+ Our Reconstruction Result |![Ours](img/Aerial.gif "Our Reconstruction Result")|![Ours](img/Drop.gif "Our Reconstruction Result")|![Ours](img/Kobe.gif "Our Reconstruction Result")
+
+Compressed Measurement |![Measurement](img/measurement_4.png "Compressed Measurement")|![Measurement](img/measurement_5.png "Compressed Measurement")|![Measurement](img/measurement_6.png "Compressed Measurement")
+--- | ------ | ------ | ------ 
+ Our Reconstruction Result |![Ours](img/Runner.gif "Our Reconstruction Result")|![Ours](img/Traffic.gif "Our Reconstruction Result")|![Ours](img/Vehicle.gif "Our Reconstruction Result")
 
 [//]: # ( Compressed Measurement | Our Reconstruction Result)
-
-[//]: # ( ----- | ------ )
-
+[//]: # ( ----- | ------)
 [//]: # (![Measurement]&#40;img/measurement_1.png "Compressed Measurement"&#41;|![Ours]&#40;img/Aerial.gif "Our Reconstruction Result"&#41;)
 
 [//]: # (![Measurement]&#40;img/measurement_2.png "Compressed Measurement"&#41;|![Ours]&#40;img/Drop.gif "Our Reconstruction Result"&#41;)
