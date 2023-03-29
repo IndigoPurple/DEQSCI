@@ -7,19 +7,108 @@ In this repository we provide code of the paper:
 
 > arxiv link: https://arxiv.org/abs/2201.06931
 
+# Highlights
+- [paper](https://arxiv.org/abs/2201.06931) | [code](https://github.com/IndigoPurple/DEQSCI) | [Mathematical Cookbook](https://arxiv.org/abs/2202.07437)
+- reported in Chinese by [QbitAI](https://mp.weixin.qq.com/s/Rp6wq2ytMZztTuRrsT7AiA), [IntelligentOptics](https://mp.weixin.qq.com/s/9I6asxM1ZO5a2qDLyuCDRg)  
+- video presentation on [YouTube](https://www.youtube.com/watch?v=Pc2qaE_3unU&list=PLELW-PRf7MIftVUV0NLqR1s7iEdewbujN), Bilibili ([English](https://www.bilibili.com/video/BV1X54y1g7D9/), [Chinese](https://www.bilibili.com/video/BV1V54y137QK/), [Cantonese](https://www.bilibili.com/video/BV1224y1G7ee/))
+
 # Results
+ Compressed Measurement |![Measurement](img/measurement_1.png "Compressed Measurement")|![Measurement](img/measurement_2.png "Compressed Measurement")|![Measurement](img/measurement_3.png "Compressed Measurement")|![Measurement](img/measurement_4.png "Compressed Measurement")|![Measurement](img/measurement_5.png "Compressed Measurement")|![Measurement](img/measurement_6.png "Compressed Measurement")
+--- | ------ | ------ | ------ | ------ | ------ | ------ 
+ Our Reconstruction Result |![Ours](img/Aerial.gif "Our Reconstruction Result")|![Ours](img/Drop.gif "Our Reconstruction Result")|![Ours](img/Kobe.gif "Our Reconstruction Result")|![Ours](img/Runner.gif "Our Reconstruction Result")|![Ours](img/Traffic.gif "Our Reconstruction Result")|![Ours](img/Vehicle.gif "Our Reconstruction Result")
 
- Compressed Measurement | Our Reconstruction Result
- ----- | ------ 
-![Measurement](img/measurement_1.png "Compressed Measurement")|![Ours](img/Aerial.gif "Our Reconstruction Result")
-![Measurement](img/measurement_2.png "Compressed Measurement")|![Ours](img/Drop.gif "Our Reconstruction Result")
-![Measurement](img/measurement_3.png "Compressed Measurement")|![Ours](img/Kobe.gif "Our Reconstruction Result")
-![Measurement](img/measurement_4.png "Compressed Measurement")|![Ours](img/Runner.gif "Our Reconstruction Result")
-![Measurement](img/measurement_5.png "Compressed Measurement")|![Ours](img/Traffic.gif "Our Reconstruction Result")
-![Measurement](img/measurement_6.png "Compressed Measurement")|![Ours](img/Vehicle.gif "Our Reconstruction Result")
+[//]: # ( Compressed Measurement | Our Reconstruction Result)
 
-# Usage
-[20-Feb-2023] Code is a bit messy now. I am currently occupied with other projects and thus will delay the tidying up.
+[//]: # ( ----- | ------ )
+
+[//]: # (![Measurement]&#40;img/measurement_1.png "Compressed Measurement"&#41;|![Ours]&#40;img/Aerial.gif "Our Reconstruction Result"&#41;)
+
+[//]: # (![Measurement]&#40;img/measurement_2.png "Compressed Measurement"&#41;|![Ours]&#40;img/Drop.gif "Our Reconstruction Result"&#41;)
+
+[//]: # (![Measurement]&#40;img/measurement_3.png "Compressed Measurement"&#41;|![Ours]&#40;img/Kobe.gif "Our Reconstruction Result"&#41;)
+
+[//]: # (![Measurement]&#40;img/measurement_4.png "Compressed Measurement"&#41;|![Ours]&#40;img/Runner.gif "Our Reconstruction Result"&#41;)
+
+[//]: # (![Measurement]&#40;img/measurement_5.png "Compressed Measurement"&#41;|![Ours]&#40;img/Traffic.gif "Our Reconstruction Result"&#41;)
+
+[//]: # (![Measurement]&#40;img/measurement_6.png "Compressed Measurement"&#41;|![Ours]&#40;img/Vehicle.gif "Our Reconstruction Result"&#41;)
+
+# Requirements
+For pre-requisites, run:
+```
+conda env create -f environment.yml
+conda activate deq
+```
+
+# Pre-trained models
+Pre-trained models are provided in the `models` folder, and testing datasets in the `data/test_gray/` folder.
+
+Therefore, you can quickly get started without additional downloads required.
+
+# Getting started
+To reproduce the main results from our paper, simply run:
+
+```
+sh test_ffdnet.sh
+```
+or
+```
+python ./video_sci_proxgrad.py --savepath ./save/test_ffdnet/ --testpath ../data/test_gray/ --loadpath ./models/ffdnet.ckpt --denoiser ffdnet --and_maxiters 180 --inference True
+```
+
+# Testing other models
+Pretrained *DE-GAP-CNN* and *DE-GAP-RSN-CNN* are also provided in the `models` folder. For testing those models, sun:
+```
+sh test_cnn.sh
+```
+or
+```
+sh test_rsn_cnn.sh
+```
+
+# Training dataset
+The training dataset is available at [OneDrive](https://connecthkuhk-my.sharepoint.com/:u:/g/personal/zhaoyp_connect_hku_hk/Ec0mdw6NSlBDmnm5sJvhu9UBq8ZPxhy2uvPIv2UWrkPoXQ?e=DL5ruv) 
+and [Baidu Netdisk](https://pan.baidu.com/s/1OopJrOqZBb3yqJWvaCIRPA) (password: df8a). Download and unzip the file into 
+the folder `data/DAVIS/matlab/`, of which the file structure should be:
+- DAVIS/
+    - matlab/
+        - gt/
+        - measurement/
+        - data_generation.m
+        - mask.mat
+
+# Training new models
+For training *DE-GAP-FFDnet* from scratch, you could simply run:
+```
+sh train_ffdnet.sh
+```
+or
+```
+python ./video_sci_proxgrad.py \
+--savepath ./save/train_ffdnet/ \
+--trainpath ../data/DAVIS/matlab/ \
+--testpath ../data/test_gray/ \
+--denoiser ffdnet
+```
+
+If you want to try different settings, you could find, use and add the arguments in the [video_sci_proxgrad.py](video_sci_proxgrad.py).
+
+For example, you may run:
+```
+python ./video_sci_proxgrad.py \
+--batch_size 1 \
+--lr 0.0001 \
+--lr_gamma 0.1 \
+--sched_step 10 \
+--print_every_n_steps 100 \
+--save_every_n_steps 1000 \
+--savepath ./save/train_ffdnet/ \
+--trainpath ./data/DAVIS/matlab/ \
+--testpath ./data/test_gray/ \
+--loadpath ./save/ffdnet.ckpt \
+--denoiser ffdnet \
+--gpu_ids 0
+```
 
 # Citation
 Cite our paper if you find it interesting!
@@ -31,5 +120,3 @@ Cite our paper if you find it interesting!
   year={2022}
 }
 ```
-
-
