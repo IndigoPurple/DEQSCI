@@ -45,7 +45,7 @@ conda activate deq
 # Pre-trained models
 Pre-trained models are provided in the `models` folder, and testing datasets in the `data/test_gray/` folder.
 
-Therefore, <span style="color:red">you can quickly get started without additional downloads required</span>.
+Therefore, <span style="color:red">**you can quickly get started without additional downloads required**</span>.
 
 # Getting started
 To reproduce the main results from our paper, simply run:
