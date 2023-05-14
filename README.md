@@ -121,4 +121,11 @@ Cite our paper if you find it interesting!
   journal={arXiv preprint arXiv:2201.06931},
   year={2022}
 }
+
+@article{zhao2022mathematical,
+  title={Mathematical Cookbook for Snapshot Compressive Imaging},
+  author={Zhao, Yaping},
+  journal={arXiv preprint arXiv:2202.07437},
+  year={2022}
+}
 ```
