@@ -115,11 +115,14 @@ python ./video_sci_proxgrad.py \
 # Citation
 Cite our paper if you find it interesting!
 ```
-@article{zhao2022deep,
-  title={Deep equilibrium models for video snapshot compressive imaging},
+@inproceedings{zhao2023deep,
+  title={Deep Equilibrium Models for Snapshot Compressive Imaging},
   author={Zhao, Yaping and Zheng, Siming and Yuan, Xin},
-  journal={arXiv preprint arXiv:2201.06931},
-  year={2022}
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={37},
+  number={3},
+  pages={3642--3650},
+  year={2023}
 }
 
 @article{zhao2022mathematical,
