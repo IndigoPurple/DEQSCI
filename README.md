@@ -125,6 +125,13 @@ Cite our paper if you find it interesting!
   year={2023}
 }
 
+@article{zhao2022deep,
+  title={Deep equilibrium models for video snapshot compressive imaging},
+  author={Zhao, Yaping and Zheng, Siming and Yuan, Xin},
+  journal={arXiv preprint arXiv:2201.06931},
+  year={2022}
+}
+
 @article{zhao2022mathematical,
   title={Mathematical Cookbook for Snapshot Compressive Imaging},
   author={Zhao, Yaping},
